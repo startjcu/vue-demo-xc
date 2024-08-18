@@ -41,3 +41,25 @@ import './test.css'
 ```css
 @import './test.css';
 ```
+
+### setup语法糖下配置组件名
+
+下载
+
+```bash
+npm i vite-plugin-vue-setup-path-extend -D
+```
+
+配置：vite.config.js
+
+```js
+export default defineConfig({
+  plugins: [vue(), vueSetupExtend()]
+})
+```
+
+使用
+
+```html
+<script setup name="Hello123"></script>
+```
