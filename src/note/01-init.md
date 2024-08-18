@@ -63,3 +63,32 @@ export default defineConfig({
 ```html
 <script setup name="Hello123"></script>
 ```
+
+### Github配置SSH
+
+用ls -al ~/.ssh 若没有rsa相关文件，说明没有该电脑上没有连接github账号的SSH-key
+
+1. 查看git配置：git config list
+2. 配置要修改的参数，如用户名 git config --global user.name yixing
+3. 查看密钥对：ls -al ~/.ssh
+4. 生成密钥对：ssh-keygen -t rsa -C startjcu
+5. 查看公钥：cat ~/.ssh/id_rsa.pub
+6. 在github账号的settings里找到“SSH and GPG keys”New SSH key添加第5步提供的key
+
+### 常用Git命令
+
+```bash
+# 查看状态
+git status
+
+# 拉取远程伙伴代码
+git stash list
+git stash
+git stash pop
+
+# 处理至无冲突状态
+git add .
+git reset xxx
+git commit -m 'xxx'
+git push
+```
