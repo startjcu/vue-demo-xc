@@ -1,3 +1,4 @@
+import Count from '@/components/Count.vue'
 import Detail from '@/components/Detail.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import HooksDome from '@/components/HooksDome.vue'
@@ -36,6 +37,10 @@ const routes = [
         props: true
       },
     ]
+  },
+  {
+    path: '/count',
+    component: Count
   },
   {
     path: '/',
