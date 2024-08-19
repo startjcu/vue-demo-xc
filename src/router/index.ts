@@ -1,3 +1,4 @@
+import Father from '@/components/communicate/Father.vue'
 import Count from '@/components/Count.vue'
 import Detail from '@/components/Detail.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
@@ -41,6 +42,10 @@ const routes = [
   {
     path: '/count',
     component: Count
+  },
+  {
+    path: '/communicate',
+    component: Father
   },
   {
     path: '/',

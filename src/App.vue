@@ -9,6 +9,7 @@
     <RouterLink to="/hooks" active-class="active">钩子</RouterLink>
     <RouterLink to="/news" active-class="active">新闻</RouterLink>
     <RouterLink to="/count" active-class="active">仓库</RouterLink>
+    <RouterLink to="/communicate" active-class="active">通信</RouterLink>
   </div>
   <RouterView />
 </template>
