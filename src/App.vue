@@ -1,21 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
-const hao = ref()
-
-function showLog() {
-  console.log(hao.value)
-  console.log(hao.value.count)
-  console.log(hao.value.user)
-  hao.value.getDom()
-  hao.value.addFn()
-}
 </script>
 
 <template>
-  <HelloWorld ref="hao" />
-  <button @click="showLog">Parent</button>
+  <div>
+    <RouterLink to="/home" active-class="active">首页</RouterLink>
+    <RouterLink to="/person" active-class="active">个人</RouterLink>
+    <RouterLink to="/hooks" active-class="active">钩子</RouterLink>
+    <RouterLink to="/news" active-class="active">新闻</RouterLink>
+  </div>
+  <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+a {
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+</style>
