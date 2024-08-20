@@ -1,5 +1,6 @@
 import Father from '@/components/communicate/Father.vue'
 import Count from '@/components/Count.vue'
+import CssDemo from '@/components/CssDemo.vue'
 import Detail from '@/components/Detail.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import HooksDome from '@/components/HooksDome.vue'
@@ -11,6 +12,10 @@ const routes = [
   {
     path: '/home',
     component: HelloWorld
+  },
+  {
+    path: '/css',
+    component: CssDemo
   },
   {
     path: '/person',

@@ -92,3 +92,34 @@ git reset xxx
 git commit -m 'xxx'
 git push
 ```
+
+### vite项目中引入tailwindcss
+
+```bash
+# 下载依赖
+npm install -D tailwindcss postcss autoprefixer
+# 初始化
+npx tailwindcss init -p
+```
+
+在配置文件`tailwind.config.js`中配置要处理的文件
+
+```js
+export default {
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}']
+}
+```
+
+创建`assets/tailwind.css`添加指令
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+在`main.js`文件中引入
+
+```js
+import './assets/tailwind.css'
+```
