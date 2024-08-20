@@ -1,27 +1,31 @@
 <script lang="ts" setup>
-import Category from './Category.vue';
+import AsyncChild from './AsyncChild.vue';
 </script>
 
 <template>
   <div class="con">
-    <Category v-slot="params">
-      <ul>
-        <li v-for="item in params.list" :key="item.id">{{ item.text }}</li>
-      </ul>
-    </Category>
-    <Category #default="{ list }">
-      <ol>
-        <li v-for="item in list" :key="item.id">{{ item.text }}</li>
-      </ol>
-    </Category>
+    <h2>父组件</h2>
+    <Suspense>
+      <template #default>
+        <AsyncChild />
+      </template>
+      <template #fallback>
+        加载中……
+      </template>
+    </Suspense>
   </div>
 </template>
 
 <style scoped>
 .con {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-evenly;
+  margin: 12px;
+  padding: 16px;
+  /* color: orange; */
+  height: 400px;
+  width: 400px;
+  border: 1px solid #ccc;
+  /* 该属性会让fixed定位相对于当前容器 */
+  /* filter: saturate(0%); */
 }
 
 button {
