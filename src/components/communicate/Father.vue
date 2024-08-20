@@ -1,32 +1,27 @@
 <script lang="ts" setup>
-import { provide, reactive, ref } from 'vue';
-import Child from './Child.vue';
-
-const money = ref(100)
-const car = reactive({ brand: '宝马', price: 30 })
-
-function updateMoney(val: number) {
-  money.value -= val
-}
-
-provide('moneyContext', { money, updateMoney })
-provide('car', car)
+import Category from './Category.vue';
 </script>
 
 <template>
   <div class="con">
-    <h2>父组件</h2>
-    <p>存款：{{ money }}</p>
-    <p>汽车：一辆{{ car.brand }}，价值{{ car.price }} W</p>
-    <Child />
+    <Category v-slot="params">
+      <ul>
+        <li v-for="item in params.list" :key="item.id">{{ item.text }}</li>
+      </ul>
+    </Category>
+    <Category #default="{ list }">
+      <ol>
+        <li v-for="item in list" :key="item.id">{{ item.text }}</li>
+      </ol>
+    </Category>
   </div>
 </template>
 
 <style scoped>
 .con {
-  margin: 12px;
-  padding: 12px;
-  border: 1px solid #ddd;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 button {
